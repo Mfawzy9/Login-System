@@ -434,6 +434,40 @@ function switchInputsToInvalidStyle(){
 
 }
 
+function switchLoginInputsToInvalidStyle(){
+            //email
+            loginEmailValidIcon.classList.add('bi')
+            loginEmailValidIcon.classList.add('bi-envelope-x-fill')
+            loginEmailValidIcon.classList.add('text-danger')
+        
+            loginEmailValidIcon.classList.remove('fa-solid')
+            loginEmailValidIcon.classList.remove('fa-envelope')
+            loginEmailValidIcon.classList.remove('fa-envelope-circle-check')
+            loginEmailValidIcon.classList.remove('text-success')
+        
+            loginEmailInput.style.removeProperty('border-bottom')
+        
+            loginEmailInput.style.cssText= `
+            border-bottom: 2px solid #dc3545 !important;`
+            
+            //pass
+            loginPassValidIcon.classList.remove('text-success');
+            loginPassValidIcon.classList.add('text-danger');
+        
+            loginPassInput.style.removeProperty('border-bottom');
+        
+            loginPassInput.style.cssText= `
+            border-bottom: 2px solid #dc3545 !important;`
+    
+    
+            document.querySelector('.login-email-container').classList.add("shake");
+            document.querySelector('.login-pass-container').classList.add("shake");
+        
+            setTimeout(function(){
+            document.querySelector('.login-pass-container').classList.remove("shake");
+            document.querySelector('.login-email-container').classList.remove("shake");
+            } ,1000)
+}
 
 // signup name validate////////////////////////////////
 
@@ -602,45 +636,14 @@ loginSubmit.addEventListener('click' , function(){
         document.querySelector('.wrong-inputs-login').classList.add('d-none')
         document.querySelector('.success-inputs-login').classList.add('d-none');
 
-        switchInputsToInvalidStyle();
+        switchLoginInputsToInvalidStyle();
 
     }else{
         document.querySelector('.wrong-inputs-login').classList.remove('d-none');
         document.querySelector('.empty-inputs-login').classList.add('d-none');
 
 
-        //email
-        loginEmailValidIcon.classList.add('bi')
-        loginEmailValidIcon.classList.add('bi-envelope-x-fill')
-        loginEmailValidIcon.classList.add('text-danger')
-    
-        loginEmailValidIcon.classList.remove('fa-solid')
-        loginEmailValidIcon.classList.remove('fa-envelope')
-        loginEmailValidIcon.classList.remove('fa-envelope-circle-check')
-        loginEmailValidIcon.classList.remove('text-success')
-    
-        loginEmailInput.style.removeProperty('border-bottom')
-    
-        loginEmailInput.style.cssText= `
-        border-bottom: 2px solid #dc3545 !important;`
-        
-        //pass
-        loginPassValidIcon.classList.remove('text-success');
-        loginPassValidIcon.classList.add('text-danger');
-    
-        loginPassInput.style.removeProperty('border-bottom');
-    
-        loginPassInput.style.cssText= `
-        border-bottom: 2px solid #dc3545 !important;`
-
-
-        document.querySelector('.login-email-container').classList.add("shake");
-        document.querySelector('.login-pass-container').classList.add("shake");
-    
-        setTimeout(function(){
-        document.querySelector('.login-pass-container').classList.remove("shake");
-        document.querySelector('.login-email-container').classList.remove("shake");
-        } ,1000)
+        switchLoginInputsToInvalidStyle();
 
 
     }
