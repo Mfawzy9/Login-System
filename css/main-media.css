@@ -20,9 +20,14 @@
         align-items: start !important;
     }
 
-
-
 }
+
+@media (max-width: 767px) {
+    .signup-box .content {
+        padding-top: unset;
+        }
+    }
+    
 
 @media (min-width: 991px){
     /* .container{
