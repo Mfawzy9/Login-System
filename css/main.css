@@ -1,0 +1,484 @@
+
+/* font-family: "Righteous", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+.heading{
+    font-family: "Righteous", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: #0859aa;
+}
+
+.main-bg{
+    background-color: var(--main-color);
+}
+
+.main-color{
+    color: var(--main-color);
+}
+
+.login-btn{
+position: relative;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.login-btn::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transform: translateX(0);
+    transition: 0.3s;
+}
+
+.login-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transform: translateX(0);
+    transition: 0.3s;
+}
+
+.login-btn:hover{
+    color: white;
+    box-shadow: 0 0 10px 2px var(--main-color);
+}
+
+.login-btn:hover::after{
+    transform: translateX(-100%)
+}
+
+.login-btn:hover::before{
+    transform: translateX(100%)
+}
+
+/*----------------------------------*/
+
+header .container {
+    border: 2px solid var(--main-color);
+    box-shadow: 0px 0px 25px 2px #0859aa;  
+    background-color: rgba(0, 0, 0, 0.777);
+}
+
+.standard-ani{
+    animation: fade 2s infinite both;
+}
+
+@keyframes fade{
+    0%{
+    box-shadow: 0px 0px 25px 2px #0859aa;    
+    }
+    50%{
+    box-shadow: 0px 0px 0px 0px #0859aa; 
+    }
+    100%{
+    box-shadow: 0px 0px 25px 2px #0859aa;  
+    }
+}
+
+.start-ani{
+    animation: scale 3s ;
+}
+
+@keyframes scale{
+    0%{
+        box-shadow: 0px 0px 25px 2px #0859aa;  
+        opacity: 0;
+        transform: scale(0) rotateX(360deg);
+    }
+    50%{
+        box-shadow: 0px 0px 0px 0px #0859aa; 
+        transform: scale(1.2);
+    }
+    100%{
+        box-shadow: 0px 0px 25px 2px #0859aa;
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+    }
+}
+
+
+/*----------- login box ---------------
+-----------------------------------------------------
+-----------------------------------------------------*/
+
+.login-form{
+    transition: 1.5s ease;
+}
+
+.login-box .content{
+    transition: 1.5s ease;
+}
+
+.start-right{
+    animation: start-right 1.5s both ;
+    animation-delay: 1s;
+}
+
+@keyframes start-right{
+    0%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.start-left{
+    animation: start-left 1.5s both ;
+    animation-delay: 1s;
+}
+
+@keyframes start-left{
+    0%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*--------------- signup box -------------------
+------------------------------------------------
+-----------------------------------------------------*/
+
+.signup-form{
+    transition: 1.5s ease;
+}
+
+.signup-box .content{
+    transition: 1.5s ease;
+}
+
+/*---------------------*/
+
+.form label{
+    width: 100%;
+    transition: 0.4s !important;
+}
+
+.form p a:hover{
+    text-decoration: underline !important;
+}
+
+.form-control{
+    border-bottom: 2px solid white !important;
+    background-color: transparent !important;
+}
+
+.form-control:focus {
+    border-bottom: 2px solid var(--main-color) !important;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+.form-control:focus ~ label{
+    color: var(--main-color) !important;
+}
+
+.form-control:focus ~ label{
+    transform: scale(1) translateY(-30%) translateX(0) !important;
+    font-size: 16px;
+}
+
+.form-control:focus ~ label::after{
+    background-color: transparent !important;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label::after{
+    background: transparent;
+}
+
+/*----------------------------------------------------
+-----------------------animation part ----------------
+-----------------------------------------------------*/
+
+.out-right{
+    transform: translateX(200%);
+    filter: blur(10px);
+}
+
+.out-left{
+        transform: translateX(-200%);
+        filter: blur(10px);
+}
+
+.in-right{
+    transform: translateX(0);
+    filter: blur(0);
+
+}
+
+.in-left{
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+/*-------------------------*/
+
+.default-signup-content{
+    transform: translateX(-200%);
+    filter: blur(10px);
+}
+
+.default-signup-form{
+    transform: translateX(200%);
+    filter: blur(10px);
+}
+
+
+/*----- shape --------------
+----------------------------*/
+
+.container .shape1{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 850px;
+    height: 600px;
+    /* z-index: -5; */
+    background-image: linear-gradient(45deg, black, #0859aa);
+    box-shadow: 0px 1px 10px 0px #0859aa;
+    transform: rotate(10deg) skewY(37deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+}
+
+.shape2{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 850px;
+    height: 600px;
+    /* z-index: -5; */
+    background-image: linear-gradient(45deg, black, #0859aa);
+    box-shadow: 0px 1px 10px 0px #0859aa;
+    transform: rotate(-10deg) skewY(-41deg);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+}
+
+/*------ background animation -------*/
+
+.background-ani{
+    position: absolute;
+    z-index: -20;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.background-ani span{
+    position: absolute;
+    bottom: -40%;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    box-shadow: 0 0 0px var(--main-color), 0 0 50px var(--main-color), 0 0 0 var(--main-color), 0 0 0 var(--main-color);
+    animation: dropping 20s infinite ease;
+
+}
+
+@keyframes dropping{
+    0%{
+        bottom: -40%;
+    }
+    100%{
+        bottom: 120%;
+        transform: rotate(360deg);
+    }
+}
+
+
+.background-ani span:nth-child(1){
+    left: 60px;
+}
+
+.background-ani span:nth-child(2){
+    left: 10%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+}
+
+.background-ani span:nth-child(3){
+    left: 20%;
+    animation-delay: 8s;
+}
+
+.background-ani span:nth-child(4){
+    left: 30%;
+    animation-delay: 13s;
+    width: 80px;
+    height: 80px;
+}
+
+.background-ani span:nth-child(5){
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.background-ani span:nth-child(6){
+    left: 50%;
+    animation-delay: 10s;
+}
+
+.background-ani span:nth-child(7){
+    left: 60%;
+    animation-delay: 12s;
+    width: 70px;
+    height: 70px;
+}
+
+.background-ani span:nth-child(8){
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.background-ani span:nth-child(9){
+    left: 80%;
+    animation-delay: 14s;
+    width: 90px;
+    height: 90px;
+}
+
+.background-ani span:nth-child(10){
+    left: 90%;
+    animation-delay: 15s;
+}
+
+/*------------------------------------------
+--------------------------------------------
+----------------------------------------------------------------*/
+
+.signup-exist-msg,
+.signup-hint-msg{
+    background-color: rgba(0, 0, 0, 0.601);
+    z-index: 1000000;
+}
+
+.msg-content{
+    width: 500px;
+    background-image: linear-gradient(-23deg, black, #001e3d);
+    box-shadow: 0px 0px 15px 0px #880000;
+    animation: translateY 1s;
+    transition: 1s;
+}
+
+@keyframes translateY{
+    0%{
+        transform: translateY(-200%);
+    }
+    50%{
+        transform: translateY(50%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.msg-content  .close-hint-window,
+.msg-content .close-exist-window{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.msg-content  .close-hint-window:hover,
+.msg-content  .close-exist-window:hover{
+    color: #ec3543;
+}
+
+.moves-out{
+    animation: Y 1.5s both;
+}
+
+@keyframes Y{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200%);
+    }
+}
+
+/*---- all signup inputs is empty -----*/
+
+.empty-inputs-signup,
+.success-inputs-signup{
+    animation: from-right 1s both ;
+}
+
+@keyframes from-right{
+    0%{
+        transform: translateX(150%);
+    }
+    50%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.shake{
+    animation: shake .13s 3;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+/* ----- login inputs empty -----*/
+
+.empty-inputs-login,
+.success-inputs-login,
+.wrong-inputs-login{
+    animation: from-left 1s both ;
+}
+
+@keyframes from-left{
+    0%{
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

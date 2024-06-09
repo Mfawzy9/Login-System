@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="media/imgs/login.png" type="image/x-icon">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!--main css file-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!--Dark-mode-->
+    <!-- <link rel="stylesheet" href="../css/mode.css" /> -->
+    <!--media-->
+    <link rel="stylesheet" href="css/main-media.css">
+</head>
+
+<body data-bs-theme="dark">
+
+
+
+    <header class="min-vh-100 d-flex flex-column justify-content-center align-items-center overflow-hidden position-relative">
+
+        <div class="background-ani">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="container py-5 p-sm-5 position-relative overflow-hidden rounded-1 start-ani">
+            <div class="shape shape1"></div>
+            
+        <!-- login form-->
+            <div class="login-box z-3 position-relative py-5">
+
+                <div class="row justify-content-between align-items-center">
+
+                    <div class="col-12 col-md-5">
+                        <div class="form login-form start-left">
+                            <form>
+                                <h2 class="text-center fs-1">Login</h2>
+
+                                <div class="form-floating login-email-container mb-3 ">
+                                    <input type="text" class="form-control border-0 rounded-0" id="loginEmail" placeholder="">
+                                    <label class="w-100" for="loginEmail">Email</label>
+                                    <i class="fa-solid fa-envelope position-absolute end-0 top-50 pe-2 login-email-valid"></i>
+                                </div>
+
+                                <div class="form-floating login-pass-container">
+                                    <input type="password" class="form-control border-0 rounded-0" id="loginPass" placeholder="Password">
+                                    <label class="w-100" for="loginPass">Password</label>
+                                    <i class="fa-solid fa-lock position-absolute end-0 top-50 pe-2 login-pass-valid"><i id="loginShowIcon" role="button" class="fa-regular fa-eye-slash ms-2 d-none"></i></i>
+                                </div>
+
+                                <p class="alert alert-danger my-3 text-center d-none empty-inputs-login"><i class="fa-solid fa-circle-exclamation fa-beat-fade me-2"></i>All inputs is required</p>
+                                <p class="alert alert-danger my-3 text-center d-none wrong-inputs-login"><i class="fa-solid fa-circle-exclamation fa-beat-fade me-2"></i>Wrong email or password</p>
+                                <p class="alert alert-success my-3 text-center d-none success-inputs-login"><i class="fa-solid fa-circle-check fa-bounce fs-4 me-2"></i>You are logged in</p>
+                                <button id="loginSubmit" type="submit" class="login-btn my-4 w-100 ">Login</button>
+                            </form>
+                            <p class="text-center">Don't have an account ? <a id="moveToSignUp" class="text-decoration-none main-color" href="#">sign up</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 order-first order-md-last">
+                        <div class="content text-end d-flex flex-md-column gap-3 justify-content-center mb-4 mb-md-0 start-right">
+                            <span class="heading display-4 ">Smart</span>
+                            <span class="heading display-4 ">Login</span>
+                            <span class="heading display-4 ">System</span>
+                        </div>
+                    </div>
+    
+                </div>
+
+            </div>
+
+
+        <!--signup form-->
+            <div class="signup-box position-absolute top-0 end-0 start-0 px-5 pt-3 z-n1">
+
+                <div class="row justify-content-between align-items-center">
+
+                    <div class="col-12 col-md-4 order-first ">
+                        <div class="content text-start d-flex flex-md-column gap-3 justify-content-center mb-4 mb-md-0 default-signup-content">
+                            <span class="heading display-4">Smart</span>
+                            <span class="heading display-4">Login</span>
+                            <span class="heading display-4">System</span>
+                        </div>
+                    </div>
+    
+                    <div class="form col-12 col-md-5">
+                        <div class="signup-form default-signup-form">
+                            <form>
+                                <h2 class="text-center fs-1">Register</h2>
+
+                                <div class="form-floating signup-name-container mb-3">
+                                    <input type="text" class="form-control border-0 rounded-0 " id="signupName" placeholder="">
+                                    <label class="w-100" for="signupName">UserName</label>
+                                    <i class="fa-solid fa-user position-absolute end-0 top-50 pe-2 signup-name-valid"></i>
+                                </div>
+
+                                <div class="form-floating signup-email-container mb-3">
+                                    <input type="text" class="form-control border-0 rounded-0" id="signupEmail" placeholder="">
+                                    <label class="w-100" for="signupEmail">Email</label>
+                                    <i class="fa-solid fa-envelope position-absolute end-0 top-50 pe-2 signup-email-valid"></i>
+                                </div>
+
+                                <div class="form-floating signup-pass-container">
+                                    <input type="password" class="form-control border-0 rounded-0" id="signupPass" placeholder="">
+                                    <label class="w-100" for="signupPass">Password</label>
+                                    <i class="fa-solid fa-lock position-absolute end-0 top-50 pe-2 signup-pass-valid"><i id="signupShowIcon" role="button" class="fa-regular fa-eye-slash ms-2 d-none"></i></i>
+                                </div>
+
+                                <p class="alert alert-danger my-3 text-center d-none empty-inputs-signup"><i class="fa-solid fa-circle-exclamation fa-beat-fade me-2"></i>all inputs is required</p>
+                                <p class="alert alert-success my-3 text-center d-none success-inputs-signup"><i class="fa-solid fa-circle-check fa-bounce fs-4 me-2"></i>successfully registered</p>
+                                <button id="signupSubmit" type="submit" class="login-btn my-3 w-100">Register</button>
+                            </form>
+                            <p class="text-center">You have an account ? <a id="moveToLogIn" class="text-decoration-none main-color " href="#">sign In</a></p>
+                        </div>
+                    </div>
+    
+    
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!--signup exist msg-->
+        <div id="signupExistMsg"
+            class="signup-exist-msg d-none position-absolute top-0 start-0 h-100 w-100 d-flex justify-content-center align-items-center">
+            <div class="container-fluid d-flex justify-content-center align-items-center">
+                <div class="msg-content d-flex flex-column align-items-center p-4 mx-auto rounded">
+                    <div class="header-icons d-flex justify-content-between w-100 mb-4">
+                        <img src="media/imgs/validation error.gif" class="" alt="">
+                        <i class="fa-solid fa-xmark fs-3 close-exist-window " role="button"></i>
+                    </div>
+                    <p class="alert-font fw-semibold fs-4 ">The Email or User Name you entered already exists.</p>
+                    <span class="w-100 "><i class="fa-solid fa-angle-right pe-2 text-danger fs-3 align-middle"></i>enter a
+                        different Email address.</span>
+                    <span class="w-100 my-3"><i class="fa-solid fa-angle-right pe-2 text-danger fs-3 align-middle"></i>use a
+                        different Name</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!--signup hints msg-->
+        <div id="signupHintMsg"
+            class="signup-hint-msg d-none position-absolute top-0 start-0 h-100 w-100 d-flex justify-content-center align-items-center">
+            <div class="container-fluid d-flex justify-content-center align-items-center">
+                <div class="msg-content d-flex flex-column align-items-center p-4 mx-auto rounded">
+                    <div class="header-icons d-flex justify-content-between w-100 mb-4">
+                        <img src="media/imgs/validation error.gif" class="" alt="">
+                        <i class="fa-solid fa-xmark fs-3 close-hint-window " role="button"></i>
+                    </div>
+                    <p class="alert-font fw-semibold fs-4 ">Please follow the rules below :</p>
+                    <span class="w-100 "><i class="fa-solid fa-angle-right pe-2 text-danger fs-3 align-middle"></i>email must be a valid one</span>
+                    <span class="w-100 my-3"><i class="fa-solid fa-angle-right pe-2 text-danger fs-3 align-middle"></i>name must contain at least 3 characters</span>
+                    <span class="w-100 "><i class="fa-solid fa-angle-right pe-2 text-danger fs-3 align-middle"></i>Your password must meet the following criteria:
+                    <p><i class="fa-solid fa-circle-chevron-right px-3 mt-3 text-warning"></i>At least 8 characters long</p>
+                    <p><i class="fa-solid fa-circle-chevron-right px-3 text-warning"></i>Must contain at least one letter</p>
+                    <p><i class="fa-solid fa-circle-chevron-right px-3 text-warning"></i>Must contain at least one number</p></span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/index.js"></script>
+    <!--bootstrap-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

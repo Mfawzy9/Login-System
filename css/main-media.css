@@ -1,0 +1,87 @@
+
+@media (max-width: 992px){
+    .shape2{
+        transform: rotate(-10deg) skewY(-42deg);
+    }
+    
+    .shape1{
+        transform: rotate(10deg) skewY(41deg);
+    }
+
+    .signup-box .row{
+        align-items: start !important;
+    }
+
+    .signup-box .content{
+        padding-top: 50px;
+    }
+
+    .login-box .row{
+        align-items: start !important;
+    }
+
+
+
+}
+
+@media (min-width: 991px){
+    /* .container{
+        width: 70%;
+    } */
+
+    .login-box .row{
+        align-items: start !important;
+    }
+
+    .shape1{
+        transform: rotate(18deg) skewY(30deg);
+    }
+
+    .signup-box .row{
+        align-items: start !important;
+    }
+
+    .signup-box .content{
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container{
+        max-width: 960px;
+    }
+    .shape2{
+        transform: rotate(-8deg) skewY(-42deg);
+    }
+}
+
+@media (max-width : 350px){
+    .login-box .content{
+        flex-direction: column;
+        align-items: center;
+        gap: 0 !important;
+    }
+
+    .signup-box{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .signup-box .content{
+        flex-direction: column;
+        align-items: center;
+        gap: 0 !important;
+        padding-top: unset;
+    }
+
+    .container{
+        padding: 0 0 70px;
+    }
+
+    .container .shape1{
+        transform: rotate(10deg) skewY(57deg);
+    }
+    .container .shape2{
+        transform: rotate(-15deg) skewY(-51deg);
+    }
+}

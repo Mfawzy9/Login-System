@@ -1,0 +1,159 @@
+
+/* font-family: "Righteous", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.heading{
+    font-family: "Righteous", sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Righteous", sans-serif;
+}
+
+:root{
+    --main-color: #0859aa;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler i{
+    transition: 0.4s;
+}
+
+.navbar-toggler i:hover{
+    color: var(--main-color) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.btn-close:focus{
+    box-shadow: none;
+}
+
+.offcanvas-body,
+.offcanvas-header{
+    background-color: black;
+}
+
+
+
+/*------ startup animation*/
+
+body .start-up {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation-name: a1;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  /* animation-iteration-count: infinite; */
+  animation-fill-mode: both;
+  z-index: 10000;
+}
+
+@keyframes a1 {
+  from {
+    top: 0;
+  }
+  to {
+    top: -250%;
+  }
+}
+
+svg {
+  fill: #000000;
+  display: block;
+  position: absolute;
+  top: 100%;
+}
+
+/*-------------------------------*/
+
+nav{
+    box-shadow: 0 0 20px 0px var(--main-color);
+}
+
+section  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#welcome{
+    animation: show 2s;
+    animation-delay: 0.3s;
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1{
+    animation: shake 4s infinite;
+    text-shadow: 2px 2px black;
+    padding: 50px;
+    color: var(--main-color);
+    box-shadow: 0 0 10px 1px white;
+    font-family: "Bangers", system-ui;
+    letter-spacing: 5px;
+}
+
+h1 span{
+    font-family: "Bangers", system-ui;
+}
+
+@media (max-width : 280px){
+    h1{
+        padding: 10px;
+    }
+
+    .container-fluid{
+        justify-content: center !important;
+    }
+}
+
+@keyframes shake {
+    5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
+        filter: blur(0.018em);
+        transform: translateY(0.018em) rotate(0deg);
+    }
+
+    10%, 30%, 40%, 50%, 70%, 80%, 90% {
+        filter: blur(0.01em);
+        transform: translateY(-0.018em) rotate(0deg);
+    }
+
+    20%, 60% {
+        filter: blur(0.00em);
+        transform: translate(-0.018em, 0.018em) rotate(0deg);
+    }
+
+    45%, 85% {
+        filter: blur(0.00em);
+        transform: translate(0.018em, -0.018em) rotate(0deg);
+    }
+
+    100% {
+        filter: blur(0.007em);
+        transform: translate(0) rotate(-0.5deg);
+    }
+}
