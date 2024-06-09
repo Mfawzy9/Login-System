@@ -401,16 +401,16 @@ function switchInputsToInvalidStyle(){
     // login////////////////////////////
 
     //email
-    loginEmailValidIcon.classList.remove('fa-user')
-    loginEmailValidIcon.classList.add('fa-user-xmark')
+    loginEmailValidIcon.classList.add('bi')
+    loginEmailValidIcon.classList.add('bi-envelope-x-fill')
     loginEmailValidIcon.classList.add('text-danger')
 
-    loginEmailValidIcon.classList.remove('fa-user-check')
+    loginEmailValidIcon.classList.remove('fa-solid')
+    loginEmailValidIcon.classList.remove('fa-envelope')
+    loginEmailValidIcon.classList.remove('fa-envelope-circle-check')
     loginEmailValidIcon.classList.remove('text-success')
 
     loginEmailInput.style.removeProperty('border-bottom')
-
-    
 
     loginEmailInput.style.cssText= `
     border-bottom: 2px solid #dc3545 !important;`
@@ -571,20 +571,20 @@ function signupPassValidation(){
     var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if(regex.test(userPass) == true){
-        signupPassValidIcon.classList.add('text-success')
-        signupPassValidIcon.classList.remove('text-danger')
+        signupPassValidIcon.classList.add('text-success');
+        signupPassValidIcon.classList.remove('text-danger');
 
-        signupPassInput.style.removeProperty('border-bottom')
+        signupPassInput.style.removeProperty('border-bottom');
 
         signupPassInput.style.cssText= `
         border-bottom: 2px solid #198754 !important;`
 
         return true;
     }else{
-        signupPassValidIcon.classList.remove('text-success')
-        signupPassValidIcon.classList.add('text-danger')
+        signupPassValidIcon.classList.remove('text-success');
+        signupPassValidIcon.classList.add('text-danger');
 
-        signupPassInput.style.removeProperty('border-bottom')
+        signupPassInput.style.removeProperty('border-bottom');
 
         signupPassInput.style.cssText= `
         border-bottom: 2px solid #dc3545 !important;`
@@ -607,7 +607,42 @@ loginSubmit.addEventListener('click' , function(){
     }else{
         document.querySelector('.wrong-inputs-login').classList.remove('d-none');
         document.querySelector('.empty-inputs-login').classList.add('d-none');
-        // switchInputsToInvalidStyle();
+
+
+        //email
+        loginEmailValidIcon.classList.add('bi')
+        loginEmailValidIcon.classList.add('bi-envelope-x-fill')
+        loginEmailValidIcon.classList.add('text-danger')
+    
+        loginEmailValidIcon.classList.remove('fa-solid')
+        loginEmailValidIcon.classList.remove('fa-envelope')
+        loginEmailValidIcon.classList.remove('fa-envelope-circle-check')
+        loginEmailValidIcon.classList.remove('text-success')
+    
+        loginEmailInput.style.removeProperty('border-bottom')
+    
+        loginEmailInput.style.cssText= `
+        border-bottom: 2px solid #dc3545 !important;`
+        
+        //pass
+        loginPassValidIcon.classList.remove('text-success');
+        loginPassValidIcon.classList.add('text-danger');
+    
+        loginPassInput.style.removeProperty('border-bottom');
+    
+        loginPassInput.style.cssText= `
+        border-bottom: 2px solid #dc3545 !important;`
+
+
+        document.querySelector('.login-email-container').classList.add("shake");
+        document.querySelector('.login-pass-container').classList.add("shake");
+    
+        setTimeout(function(){
+        document.querySelector('.login-pass-container').classList.remove("shake");
+        document.querySelector('.login-email-container').classList.remove("shake");
+        } ,1000)
+
+
     }
 
     for (var u = 0; u < registeredEmails.length; u++) {
@@ -621,27 +656,27 @@ loginSubmit.addEventListener('click' , function(){
 
 
             //email input effects
-            loginEmailValidIcon.classList.add('fa-solid')
-            loginEmailValidIcon.classList.remove('fa-envelope')
+            loginEmailValidIcon.classList.add('fa-solid');
+            loginEmailValidIcon.classList.remove('fa-envelope');
     
-            loginEmailValidIcon.classList.add('fa-envelope-circle-check')
-            loginEmailValidIcon.classList.add('text-success')
+            loginEmailValidIcon.classList.add('fa-envelope-circle-check');
+            loginEmailValidIcon.classList.add('text-success');
     
-            loginEmailValidIcon.classList.remove('bi-envelope-x-fill')
-            loginEmailValidIcon.classList.remove('bi')
-            loginEmailValidIcon.classList.remove('text-danger')
+            loginEmailValidIcon.classList.remove('bi-envelope-x-fill');
+            loginEmailValidIcon.classList.remove('bi');
+            loginEmailValidIcon.classList.remove('text-danger');
     
-            loginEmailInput.style.removeProperty('border-bottom')
+            loginEmailInput.style.removeProperty('border-bottom');
     
             loginEmailInput.style.cssText= `
             border-bottom: 2px solid #198754 !important;`
 
 
             // pass input effects
-            loginPassValidIcon.classList.add('text-success')
-            loginPassValidIcon.classList.remove('text-danger')
+            loginPassValidIcon.classList.add('text-success');
+            loginPassValidIcon.classList.remove('text-danger');
     
-            loginPassInput.style.removeProperty('border-bottom')
+            loginPassInput.style.removeProperty('border-bottom');
     
             loginPassInput.style.cssText= `
             border-bottom: 2px solid #198754 !important;`
@@ -649,6 +684,9 @@ loginSubmit.addEventListener('click' , function(){
             setTimeout(function(){
                 window.location = './pages/home.html'
             } ,2000);
+
+            document.querySelector('.login-pass-container').classList.remove("shake");
+            document.querySelector('.login-email-container').classList.remove("shake");
     }
         
 }
@@ -660,5 +698,5 @@ loginPassInput.addEventListener('input' , function(){
     loginShowIcon.classList.remove('d-none')
     if(loginPassInput.value == ''){
         loginShowIcon.classList.add('d-none')
-    }
+    };
 })
