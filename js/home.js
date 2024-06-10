@@ -12,4 +12,7 @@ logout.addEventListener('click' , function(){
     window.location = '../index.html'
 })
 
-
+//to prevent the user from entering the home page without logging in
+if (savedName == null) {
+    window.location = '../index.html';
+}
