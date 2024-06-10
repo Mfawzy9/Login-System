@@ -70,13 +70,6 @@
     }
 }
 
-@media screen and (min-width: 300px) and (max-width : 350px){
-    .signup-box{
-        padding-left:5px !important;
-        padding-right:5px !important;
-    }
-}
-
 @media (max-width : 300px){
     .login-box .content{
         flex-direction: column;
@@ -105,5 +98,12 @@
     }
     .container .shape2{
         transform: rotate(-15deg) skewY(-51deg);
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width : 350px){
+    .signup-box{
+        padding-left:5px !important;
+        padding-right:5px !important;
     }
 }
